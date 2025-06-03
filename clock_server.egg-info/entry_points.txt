@@ -1,0 +1,3 @@
+[console_scripts]
+clock-client = client:main
+clock-server = server:app
