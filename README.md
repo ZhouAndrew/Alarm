@@ -58,6 +58,54 @@ The client provides the following commands:
   python3 client.py delete 0
   ```
 
+## API Documentation
+
+The Alarm Server provides the following REST API endpoints:
+
+### 1. Get All Alarms
+- **Endpoint**: `/alarms`
+- **Method**: `GET`
+- **Description**: Retrieve a list of all alarms.
+- **Response**:
+  - `200 OK`: Returns a JSON array of alarms.
+
+### 2. Add a New Alarm
+- **Endpoint**: `/alarms`
+- **Method**: `POST`
+- **Description**: Add a new alarm.
+- **Request Body**:
+  ```json
+  {
+    "time": "07:00",
+    "label": "Morning Alarm"
+  }
+  ```
+- **Response**:
+  - `201 Created`: Returns the added alarm.
+
+### 3. Update an Alarm
+- **Endpoint**: `/alarms/<alarm_id>`
+- **Method**: `PUT`
+- **Description**: Update an existing alarm by its ID.
+- **Request Body**:
+  ```json
+  {
+    "time": "08:00",
+    "label": "Updated Alarm"
+  }
+  ```
+- **Response**:
+  - `200 OK`: Returns the updated alarm.
+  - `404 Not Found`: If the alarm ID does not exist.
+
+### 4. Delete an Alarm
+- **Endpoint**: `/alarms/<alarm_id>`
+- **Method**: `DELETE`
+- **Description**: Delete an alarm by its ID.
+- **Response**:
+  - `200 OK`: Returns the deleted alarm.
+  - `404 Not Found`: If the alarm ID does not exist.
+
 ## Packaging and Distribution
 
 To package the project, run:
